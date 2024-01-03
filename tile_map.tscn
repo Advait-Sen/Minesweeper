@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://cecm0wptl1ndy"]
+
+[ext_resource type="Texture2D" uid="uid://cum8p1i281m0v" path="res://minesweeper_tilesheet.png" id="1_b6w0o"]
+[ext_resource type="Script" path="res://tile_map.gd" id="2_rpppv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xque7"]
+texture = ExtResource("1_b6w0o")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pgj14"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_xque7")
+
+[node name="TileMap" type="TileMap"]
+position = Vector2(128, 0)
+scale = Vector2(0.5, 0.5)
+tile_set = SubResource("TileSet_pgj14")
+format = 2
+script = ExtResource("2_rpppv")
+
+[node name="RemainingMines" type="Label" parent="."]
+z_index = 1
+z_as_relative = false
+offset_left = -160.0
+offset_top = 256.0
+offset_right = -130.0
+offset_bottom = 286.0
+scale = Vector2(4, 4)
+
+[node name="ColorRect" type="ColorRect" parent="RemainingMines"]
+z_as_relative = false
+layout_mode = 0
+offset_left = -5.0
+offset_top = -2.5
+offset_right = 35.0
+offset_bottom = 27.5
+color = Color(0, 0, 1, 0.501961)
+
+[node name="Reset" type="Button" parent="."]
+offset_left = -160.0
+offset_top = 450.0
+offset_right = -40.0
+offset_bottom = 570.0
+action_mode = 0
+
+[node name="Timer" type="Label" parent="."]
+z_index = 1
+z_as_relative = false
+offset_left = -160.0
+offset_top = 674.0
+offset_right = -130.0
+offset_bottom = 704.0
+scale = Vector2(4, 4)
+text = "0"
+
+[node name="ColorRect" type="ColorRect" parent="Timer"]
+z_as_relative = false
+layout_mode = 0
+offset_left = -5.0
+offset_top = -2.5
+offset_right = 35.0
+offset_bottom = 27.5
+color = Color(0, 0, 1, 0.501961)
